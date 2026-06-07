@@ -1,0 +1,20 @@
+name = "sixpixie"
+main = "src/index.ts"
+compatibility_date = "2024-11-01"
+
+[[kv_namespaces]]
+binding = "USER_CONFIG"
+id = "REPLACE_WITH_YOUR_KV_NAMESPACE_ID"
+preview_id = "REPLACE_WITH_YOUR_KV_PREVIEW_NAMESPACE_ID"
+
+[vars]
+GITHUB_REPO = "REPLACE_WITH_YOUR_GITHUB_USERNAME/sixpixie"
+GITHUB_WORKFLOW_FILE = "notify.yml"
+GITHUB_REF = "master"
+
+# Secrets — set via `wrangler secret put`:
+# DISCORD_BOT_TOKEN
+# DISCORD_PUBLIC_KEY
+# DISCORD_APPLICATION_ID
+# SUBWAY_API_KEY
+# GITHUB_TOKEN
