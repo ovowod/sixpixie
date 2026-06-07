@@ -8,10 +8,8 @@
     "test": "vitest run",
     "register": "tsx scripts/register-commands.ts"
   },
-  "dependencies": {
-    "discord-interactions": "^3.4.0"
-  },
   "devDependencies": {
+    "discord-interactions": "^3.4.0",
     "@cloudflare/workers-types": "^4.20241127.0",
     "typescript": "^5.6.0",
     "vitest": "^2.0.0",

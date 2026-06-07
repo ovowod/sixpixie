@@ -1,2 +1,9 @@
 notify/.venv/
 worker/node_modules/
+worker/.wrangler/
+worker/dist/
+.env
+.env.*
+notify/__pycache__/
+notify/**/*.pyc
+notify/.pytest_cache/
