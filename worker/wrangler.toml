@@ -10,7 +10,7 @@ preview_id = "f8ba993b370244cdb90dd58058628a52"
 [vars]
 GITHUB_REPO = "ovowod/sixpixie"
 GITHUB_WORKFLOW_FILE = "notify.yml"
-GITHUB_REF = "master"
+GITHUB_REF = "main"
 
 # Secrets — set via `wrangler secret put`:
 # DISCORD_BOT_TOKEN
