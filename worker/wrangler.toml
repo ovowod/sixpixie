@@ -4,11 +4,11 @@ compatibility_date = "2024-11-01"
 
 [[kv_namespaces]]
 binding = "USER_CONFIG"
-id = "REPLACE_WITH_YOUR_KV_NAMESPACE_ID"
-preview_id = "REPLACE_WITH_YOUR_KV_PREVIEW_NAMESPACE_ID"
+id = "84956a7696c84c81847bf8f8e386d3f5"
+preview_id = "f8ba993b370244cdb90dd58058628a52"
 
 [vars]
-GITHUB_REPO = "REPLACE_WITH_YOUR_GITHUB_USERNAME/sixpixie"
+GITHUB_REPO = "ovowod/sixpixie"
 GITHUB_WORKFLOW_FILE = "notify.yml"
 GITHUB_REF = "master"
 

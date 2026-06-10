@@ -64,9 +64,9 @@ Discord HTTP Interactions 처리. 슬래시 커맨드 요청을 받아 Cloudflar
 |--------|------|
 | `/sixpixie setup` | 4단계 순차 설정 (출발역 → 호선 → 방향 → 도착역) |
 | `/sixpixie status` | 현재 설정 + 다음 알림 시간 표시 |
-| `/sixpixie test` | 즉시 알림 전송 (설정 확인용) |
+| `/sixpixie test` | GitHub Actions workflow_dispatch 트리거 → ~1분 후 DM 도착 |
 
-> **구현 참고:** `/sixpixie test`는 Worker 내에서 직접 지하철 API를 호출하고 DM을 전송한다. GitHub Actions의 Python 로직과 별도로 TypeScript로 동일한 알림 로직을 구현해야 한다 (중복 허용, 소규모 개인 도구 기준).
+> **구현 참고:** `/sixpixie test`는 Worker에서 GitHub API(`POST /repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches`)를 호출해 Actions 워크플로우를 즉시 실행시킨다. Worker는 Discord에 "잠시 후 DM으로 테스트 알림이 와요! 🧚"를 즉시 반환하고, 실제 DM은 GitHub Actions가 실행되면서 ~1분 후에 도착한다. 코드 중복 없음.
 
 **setup 플로우:**
 ```

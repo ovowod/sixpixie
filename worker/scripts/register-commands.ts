@@ -11,21 +11,25 @@ const command = {
   ],
 };
 
-const resp = await fetch(
-  `https://discord.com/api/v10/applications/${APP_ID}/commands`,
-  {
-    method: "PUT",
-    headers: {
-      Authorization: `Bot ${BOT_TOKEN}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify([command]),
-  }
-);
+async function main() {
+  const resp = await fetch(
+    `https://discord.com/api/v10/applications/${APP_ID}/commands`,
+    {
+      method: "PUT",
+      headers: {
+        Authorization: `Bot ${BOT_TOKEN}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify([command]),
+    }
+  );
 
-if (resp.ok) {
-  console.log("✅ Slash commands registered");
-} else {
-  console.error("❌ Failed:", await resp.text());
-  process.exit(1);
+  if (resp.ok) {
+    console.log("✅ Slash commands registered");
+  } else {
+    console.error("❌ Failed:", await resp.text());
+    process.exit(1);
+  }
 }
+
+main();
