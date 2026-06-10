@@ -1,4 +1,3 @@
-from datetime import datetime, timedelta
 import requests
 
 LINE_MAP = {
@@ -26,13 +25,8 @@ def get_arrivals(station: str, line: str, direction: str, api_key: str) -> list[
         if item.get("updnLine") != direction:
             continue
 
-        seconds = int(item.get("barvlDt", 0))
-        recv_time = datetime.strptime(item["recptnDt"], "%Y-%m-%d %H:%M:%S")
-        arrival_time = recv_time + timedelta(seconds=seconds)
-
         result.append({
-            "arrival_time": arrival_time.strftime("%H:%M"),
-            "minutes_away": seconds // 60,
+            "status": item.get("arvlMsg2", "").strip(),
             "train_name": item.get("trainLineNm", "").strip(),
         })
 

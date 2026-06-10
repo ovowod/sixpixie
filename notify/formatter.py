@@ -8,5 +8,5 @@ def format_message(arrivals: list[dict], station: str, direction: str) -> str:
         f"{station} {direction}",
     ]
     for a in arrivals:
-        lines.append(f"• {a['arrival_time']} 도착 ({a['minutes_away']}분 후) — {a['train_name']}")
+        lines.append(f"• {a['train_name']} — {a['status']}")
     return "\n".join(lines)
